@@ -3,15 +3,15 @@ services:
   app:
     build: .
     volumes:
-      - .:/usr/src/app
+      - ..:/usr/src/nextjs-prisma-docker
     ports:
-      - "3000:3000"
+      - "30003:3000"
     # command: bash -c "npm run dev"
   db:
     image: postgres:14.2
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ../db:/var/lib/postgresql/data
     env_file:
-      - .env
+      - ../.env
     ports:
-      - "5432:5432"
+      - "15811:5432"
